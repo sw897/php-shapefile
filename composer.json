@@ -1,5 +1,5 @@
 {
-    "name": "gasparesganga/php-shapefile",
+    "name": "sw897/php-shapefile",
     "description": "PHP library to read any ESRI Shapefile and its associated DBF into a PHP Array, WKT or GeoJSON",
     "type": "library",
     "keywords": ["shapefile", "shape", "shp", "dbf", "esri", "wkt", "geojson"],

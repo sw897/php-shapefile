@@ -312,7 +312,8 @@ class ShapeFile implements \Iterator
     
     private function readString($handle, $length)
     {
-        return utf8_encode(trim($this->readData($handle, 'A*', $length)));
+        //return utf8_encode(trim($this->readData($handle, 'A*', $length)));
+        return trim($this->readData($handle, 'A*', $length));
     }
     
     private function readChar($handle)
@@ -462,6 +463,14 @@ class ShapeFile implements \Iterator
                     break;
                 case 'L':   // Logical
                     $value = in_array($value, array('Y', 'y', 'T', 't'));
+                    break;
+                case 'v':
+                case 'V':
+                    $value = intval($value);
+                    break;
+                case 'N':
+                case 'd':
+                    $value = floatval($value);
                     break;
             }
             $ret[$field['name']] = $value;
